@@ -368,7 +368,14 @@ def main():
         render_welcome_screen()
 
 if __name__ == "__main__":
-    main()
+    import os
+    import streamlit.cli as stcli
+    import sys
+
+    port = int(os.environ.get("PORT", 8501))
+    sys.argv = ["streamlit", "run", "app.py", "--server.port", str(port), "--server.address", "0.0.0.0"]
+    sys.exit(stcli.main())
+
 
 
 # import streamlit as st

@@ -2,12 +2,12 @@
   "version": 2,
   "builds": [
     {
-      "src": "start.sh",
-      "use": "@vercel/static-build",
+      "src": "app.py",
+      "use": "@vercel/python",
       "config": { "maxLambdaSize": "15mb" }
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "start.sh" }
+    { "src": "/(.*)", "dest": "app.py" }
   ]
 }
